@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  db:
+    image: mongo
+    restart: unless-stopped
+    # Don't use the standard mongo port so we don't step on any existing mongo install
+    ports:
+      - "16983:27017"
+    env_file:
+      - mongo.env
+    volumes:
+      - "./mongo-data:/data/db"
+  torque-logger:
+    build:
+      context: ./
+      dockerfile: Torque.Dockerfile
+    restart: unless-stopped
+    ports:
+      - "30000:30000"
+    env_file:
+      - mongo.env
+      - torque.env
+    links:
+      - db
