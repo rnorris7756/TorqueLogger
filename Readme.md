@@ -18,7 +18,7 @@ cd TorqueLogger
 cp mongo.env.sample mongo.env
 cp torque.env.sample torque.env
 # Change the password to something better than 'password' <- Actual important step
-vim mongo.env
+vim mongo.env # You can use another editor if you really want to.  Who am I to judge?
 vim torque.env
 docker-compose up -d
 ```
