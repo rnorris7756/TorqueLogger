@@ -9,3 +9,15 @@ There's no analysis or pretty charts.  No web interface, and minimal security.  
 
 Naturally, it's all hosted in Docker, and I've included the dockerfile as well as a docker-compose file.
 If you feel like copying this project to do something, please see [license.txt](license.txt) and remember that zero work went into security/stability, so use this at your own risk.
+
+To run this project, you'll need docker-compose.  The setup process should look something like this:
+
+```
+git clone https://github.com/rnorris7756/TorqueLogger.git
+cd TorqueLogger
+docker-compose up -d
+```
+
+Things to keep in mind:
+- You should have port 30000 open (you can change the port in `docker-compose.yml`)
+- You need to configure the custom logging URL in the torque app (this is somewhere in the logging settings)
