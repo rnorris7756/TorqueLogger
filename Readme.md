@@ -15,6 +15,11 @@ To run this project, you'll need docker-compose.  The setup process should look 
 ```
 git clone https://github.com/rnorris7756/TorqueLogger.git
 cd TorqueLogger
+cp mongo.env.sample mongo.env
+cp torque.env.sample torque.env
+# Change the password to something better than 'password' <- Actual important step
+vim mongo.env
+vim torque.env
 docker-compose up -d
 ```
 
